@@ -1,0 +1,195 @@
+Why don't we #Go?
+Hackathon Castellón
+11 Nov 2016
+
+Carles Aragón
+
+* Quien usa Go?
+Google
+Docker
+Kubernetes
+Heroku
+Youtube
+Vimeo
+ ...
+
+.image images/nayar.jpg
+
+* Porqué Go?
+
+Problemas con los lenguajes _mainstream_ (C++, Java...)
+
+- Tiempos de compilación excesivos
+(el desarrollo de Go se inicia durante una pausa de 45 minutos para compilar un programa de C++ en los clústeres de compilación de Google)
+
+- Verbosos
+
+  foo::Foo *myFoo = new foo::Foo(foo::FOO_INIT)
+  
+- Antiguos, no se adaptan al nuevo _hardware_
+
+* Porqué Go?
+
+Simple
+
+Compilación rápida
+
+Librería estandar completa
+
+Fácil aprendizaje
+
+
+* Qué pretende Go?
+
+.image images/languages_comparison.png 500 _
+
+* Garbage Collector
+
+.image images/gc1.png
+
+
+* Garbage Collector 2
+
+.image images/gc2.png 500 _
+
+
+
+* Go proverbs
+
+- Don't communicate by sharing memory, share memory by communicating.
+- Concurrency is not parallelism.
+- The bigger the interface, the weaker the abstraction.
+- Make the zero value useful.
+- Gofmt's style is no one's favorite, yet gofmt is everyone's favorite.
+- A little copying is better than a little dependency.
+- Clear is better than clever.
+- Errors are values.
+- Don't just check errors, handle them gracefully.
+
+
+* Show me some code!
+
+* Hello, 世界
+
+.play code/1.go
+
+
+
+* Basics
+* Packages
+
+Todos los programas se componen de paquetes.
+
+Para utilizarlos solamente se necesita importarlos.
+
+.play code/packages.go
+
+
+* Exported Names
+
+.play code/expNames1.go
+
+Un nombre se exporta si y solo si empieza por mayúscula.
+
+.play code/expNames2.go
+
+
+* Functions
+
+.play code/functions1.go
+
+* Functions with multiple results
+
+.play code/functions2.go
+
+Se puede evitar el tipo de los argumentos si más de uno tienen el mismo.
+.code code/functions3.go
+
+* Variables
+
+"var" es la palabra usada para declarar variables.
+.code code/variables1.go
+
+Dentro de las funciones se puede utilizar una abreviación si se quiere declarar e inicializar a la vez.
+.code code/variables2.go
+
+Las variables pueden tener diferentes tipos, algunos de estos son:
+.code code/variables3.go
+
+Las variables sin valor inicial tienen estos valores:
+.code code/variables4.go
+
+* Más sobre  variables
+
+Conversión de tipos
+.play code/variables5.go
+
+Las constantes se declaran como las variables pero con la palabra const.
+
+No se puede utilizar la abreviación :=
+.code code/variables6.go
+
+
+* Controladores de flujo
+
+For es el único tipo de bucle
+
+.play code/for.go
+
+
+* Controladores de flujo
+
+If
+
+.play code/if1.go
+
+* If puede recibir una declaración
+
+.play code/if2.go
+
+* Cómo podríamos mejorar esto con Go? 
+.code code/switch.go
+
+* Increíble!
+.play code/switch2.go
+
+* Arrays and Slices
+
+.play code/arrays.go
+
+* Gorutines and Defer
+
+.play code/gorutines.go
+
+* Channels
+
+.play code/channels.go
+
+
+* Más ejemplos
+
+
+
+* Servidor HTTP
+.link https://golang.org/pkg/net/http/ Los ejemplos de net/http de Go
+
+.play code/example1.go
+
+
+
+* Aplicar métodos a punteros nil
+.link https://www.youtube.com/watch?v=ynoY2xz-F8s Understanding nil, Francesc Campoy
+
+.code code/example2.go
+
+
+* Aplicar métodos a punteros nil
+
+.play code/example3.go
+
+
+* Nexus
+
+.play code/example7.go
+
+
